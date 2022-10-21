@@ -84,10 +84,13 @@ def on_message(client, userdata, message):
 
 def listen_mqtt_nmea_0183(source):
     """Init MQTT topic input"""
+    LOGGER.info("HERE")
 
     mq = MQTT(client_id=MQTT_CLIENT_ID, transport=MQTT_TRANSPORT)
     mq.connect(MQTT_BROKER_HOST, MQTT_BROKER_PORT)
     mq.subscribe(MQTT_TOPIC_NMEA_IN)
+    LOGGER.info("HERE 2" )
+   
     mq.on_message = on_message
 
 
