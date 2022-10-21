@@ -230,8 +230,9 @@ if __name__ == "__main__":
     LOGGER.info("Connecting to MQTT broker...")
     mq.connect(MQTT_BROKER_HOST, MQTT_BROKER_PORT)
 
+    # MAIN listener
+    LOGGER.info("Setting up MQTT listener...")
+    listen_mqtt_nmea_0183(source)
+
     # Socket Multicast runs in the foreground so we put the MQTT stuff in a separate thread
     threading.Thread(target=mq.loop_forever, daemon=True).start()
-
-    # MAIN listener
-    listen_mqtt_nmea_0183(source)
