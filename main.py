@@ -230,6 +230,7 @@ if __name__ == "__main__":
 
     # Build pipeline
     LOGGER.info("Building pipeline...")
+    global source
     source = Stream()
 
     # MQTT stream: RAW NMEA --> JSON NMEA
