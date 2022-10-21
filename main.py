@@ -96,7 +96,7 @@ def listen_mqtt_nmea_0183():
     mq.loop_forever()
 
 
-def pars_nmea(nmea_msg):
+def pars_nmea(nmea_str):
     """Parsing ANavS NMEA sentences"""
 
     nmea_list = []
@@ -108,8 +108,8 @@ def pars_nmea(nmea_msg):
     #     nmea_list = nmea_msg.split("\r")
     # nmea_str = "$" + nmea_str.split("$")[-1]
 
-    nmea_str = nmea_msg["message"]
-    nmea_list.append(nmea_list)
+    # nmea_str = nmea_msg["message"]
+    nmea_list.append(nmea_str)
 
     for nmea_str in nmea_list:
         
