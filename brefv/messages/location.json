@@ -1,0 +1,16 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "array",
+    "title": "Location",
+    "description": "A location [x, y, z] [m] relative to a body´s geometric center, expressed in the BF frame of reference",
+    "items": {
+        "type": "number"
+    },
+    "minItems": 3,
+    "maxItems": 3,
+    "default": [
+        0.0,
+        0.0,
+        0.0
+    ]
+}

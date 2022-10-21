@@ -1,0 +1,16 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "array",
+    "title": "Angular Velocity",
+    "description": "Angular velocity [Yaw-rate, Pitch-rate, Roll-rate] (rad/s) of a body with respect to the body's BF frame of reference.",
+    "items": {
+        "type": "number"
+    },
+    "minItems": 3,
+    "maxItems": 3,
+    "default": [
+        0.0,
+        0.0,
+        0.0
+    ]
+}

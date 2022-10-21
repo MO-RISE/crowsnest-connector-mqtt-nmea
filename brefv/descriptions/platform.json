@@ -1,0 +1,43 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "title": "Platform description",
+    "description": "A description of a platform including metadata of the platform itself and hosted devices",
+    "required": [
+        "platform_id",
+        "devices"
+    ],
+    "properties": {
+        "platform_id": {
+            "type": "string",
+            "title": "Platform id",
+            "description": "Id of the platform"
+        },
+        "metadata": {
+            "type": "object",
+            "title": "Metadata",
+            "description": "Metadata of this platform"
+        },
+      "platform_type": {
+          "type": "string",
+          "title": "Platform type",
+          "enum": ["vessel", "land-sensor-station", "remote-control-center"],
+          "description": "Cateforization of the platform"
+    },
+        "devices": {
+            "type": "array",
+            "title": "Devices",
+            "description": "List of devices associated with this platform",
+            "items": {
+                "anyOf": [
+                    {
+                        "$ref": "./devices/generic_device.json"
+                    },
+                    {
+                        "$ref": "./devices/rudder.json"
+                    }
+                ]
+            }
+        }
+    }
+}

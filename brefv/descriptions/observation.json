@@ -1,0 +1,45 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "title": "Observation description",
+    "description": "A description of an observation",
+    "required": [
+        "type"
+    ],
+    "properties": {
+        "type": {
+            "type": "string",
+            "format": "uri",
+            "title": "Type",
+            "description": "An uri to a JSON schema defining the payload of the observation"
+        },
+        "description": {
+            "type": "string",
+            "title": "Description",
+            "description": "Human readable description of the observation"
+        },
+        "unit": {
+            "type": "string",
+            "title": "Unit",
+            "description": "Unit of the observation"
+        },
+        "location": {
+            "description": "Location in the platform fixed frame of reference to which the observation refers.",
+            "$ref": "../messages/location.json"
+        },
+        "rotation": {
+            "description": "Rotation in the platform fixed frame of reference to which the observation refers.",
+            "$ref": "../messages/rotation.json"
+        },
+        "min_value": {
+            "type": "number",
+            "title": "Minimum value",
+            "description": "Minimum value of the observation"
+        },
+        "max_value": {
+            "type": "number",
+            "title": "Maximum value",
+            "description": "Maximum value of the observation"
+        }
+    }
+}

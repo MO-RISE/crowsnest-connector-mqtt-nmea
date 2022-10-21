@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "title": "Pose",
+  "description": "The pose of a body given as a combination of its position and attitude.",
+  "required": [
+    "position",
+    "attitude"
+  ],
+  "properties": {
+    "position": {
+      "$ref": "./position.json"
+    },
+    "attitude": {
+      "$ref": "./attitude.json"
+    }
+  },
+  "additionalProperties": false
+}

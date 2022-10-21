@@ -1,0 +1,28 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "title": "Error ellipse",
+    "description": "Error ellipse reading from a GNSS sensor",
+    "required": [
+        "semi_major_axis",
+        "semi_minor_axis",
+        "azimuth"
+    ],
+    "properties": {
+        "semi_major_axis": {
+            "type": "number",
+            "title": "Semi-major axis",
+            "description": "Semi-major axis of the GNSS sensor's error ellipse for 1 standard deviation"
+        },
+        "semi_minor_axis": {
+            "type": "number",
+            "title": "Semi-minor axis",
+            "description": "Semi-minor axis of the GNSS sensor's error ellipse for 1 standard deviation"
+        },
+        "azimuth": {
+            "type": "number",
+            "title": "Azimuth",
+            "description": "Azimuth of the semi-major axis of the GNSS sensor's error ellipse with respect to True North in degrees"
+        }
+    }
+}

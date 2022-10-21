@@ -1,0 +1,162 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "title": "Propeller",
+    "description": "Description of a propeller device",
+    "allOf": [
+        {
+            "$ref": "./generic_device.json"
+        },
+        {
+            "properties": {
+                "device_type": {
+                    "default": "propeller",
+                    "pattern": "^propeller$"
+                },
+                "observations": {
+                    "type": "object",
+                    "title": "Observations",
+                    "description": "Map of observations produced by a propeller",
+                    "required": [
+                        "rpm"
+                    ],
+                    "properties": {
+                        "rpm": {
+                            "description": "The rate of revolution of the propeller",
+                            "allOf": [
+                                {
+                                    "$ref": "../observation.json"
+                                },
+                                {
+                                    "required": [
+                                        "min_value",
+                                        "max_value"
+                                    ],
+                                    "properties": {
+                                        "min_value": {},
+                                        "max_value": {}
+                                    }
+                                }
+                            ]
+                        },
+                        "rpm_set": {
+                            "description": "The set point for the rate of revolution",
+                            "allOf": [
+                                {
+                                    "$ref": "../observation.json"
+                                },
+                                {
+                                    "required": [
+                                        "min_value",
+                                        "max_value"
+                                    ],
+                                    "properties": {
+                                        "min_value": {},
+                                        "max_value": {}
+                                    }
+                                }
+                            ]
+                        },
+                        "pitch_angle": {
+                            "description": "The propeller pitch angle",
+                            "allOf": [
+                                {
+                                    "$ref": "../observation.json"
+                                },
+                                {
+                                    "required": [
+                                        "min_value",
+                                        "max_value"
+                                    ],
+                                    "properties": {
+                                        "min_value": {},
+                                        "max_value": {}
+                                    }
+                                }
+                            ]
+                        },
+                        "pitch_angle_set": {
+                            "description": "The set point for the propeller pitch angle",
+                            "allOf": [
+                                {
+                                    "$ref": "../observation.json"
+                                },
+                                {
+                                    "required": [
+                                        "min_value",
+                                        "max_value"
+                                    ],
+                                    "properties": {
+                                        "min_value": {},
+                                        "max_value": {}
+                                    }
+                                }
+                            ]
+                        },
+                        "wrench": {
+                            "description": "The force and moment produced by the propeller",
+                            "allOf": [
+                                {
+                                    "$ref": "../observation.json"
+                                },
+                                {
+                                    "required": [
+                                        "location",
+                                        "rotation"
+                                    ],
+                                    "properties": {
+                                        "location": {},
+                                        "rotation": {}
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "commands": {
+                    "type": "object",
+                    "title": "Commands",
+                    "description": "Map of commands accepted by a rudder",
+                    "properties": {
+                        "rpm_set": {
+                            "description": "The set point for the rate of revolution of the propeller",
+                            "allOf": [
+                                {
+                                    "$ref": "../command.json"
+                                },
+                                {
+                                    "required": [
+                                        "min_value",
+                                        "max_value"
+                                    ],
+                                    "properties": {
+                                        "min_value": {},
+                                        "max_value": {}
+                                    }
+                                }
+                            ]
+                        },
+                        "pitch_angle_set": {
+                            "description": "The set point for the propeller pitch angle",
+                            "allOf": [
+                                {
+                                    "$ref": "../command.json"
+                                },
+                                {
+                                    "required": [
+                                        "min_value",
+                                        "max_value"
+                                    ],
+                                    "properties": {
+                                        "min_value": {},
+                                        "max_value": {}
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

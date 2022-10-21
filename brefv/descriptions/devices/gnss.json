@@ -1,0 +1,85 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "title": "GNSS",
+    "description": "Description of a GNSS device",
+    "allOf": [
+        {
+            "$ref": "./generic_device.json"
+        },
+        {
+            "properties": {
+                "device_type": {
+                    "default": "gnss",
+                    "pattern": "^gnss$"
+                },
+                "observations": {
+                    "type": "object",
+                    "title": "Observations",
+                    "description": "Map of observations produced by a GNSS receiver",
+                    "required": [
+                        "position"
+                    ],
+                    "properties": {
+                        "position": {
+                            "description": "The position report",
+                            "allOf": [
+                                {
+                                    "$ref": "../observation.json"
+                                }
+                            ]
+                        },
+                        "error_ellipse": {
+                            "description": "The error ellipse output",
+                            "allOf": [
+                                {
+                                    "$ref": "../observation.json"
+                                }
+                            ]
+                        },
+                        "speed_over_ground": {
+                            "description": "Speed over ground",
+                            "allOf": [
+                                {
+                                    "$ref": "../observation.json"
+                                }
+                            ]
+                        },
+                        "course_over_ground": {
+                            "description": "Course over ground",
+                            "allOf": [
+                                {
+                                    "$ref": "../observation.json"
+                                }
+                            ]
+                        },
+                        "rate_of_turn": {
+                            "description": "Rate of turn",
+                            "allOf": [
+                                {
+                                    "$ref": "../observation.json"
+                                }
+                            ]
+                        },
+                        "transverse_speed_bow": {
+                            "description": "Transverse speed at the bow",
+                            "allOf": [
+                                {
+                                    "$ref": "../observation.json"
+                                }
+                            ]
+                        },
+                        "transverse_speed_stern": {
+                            "description": "Transverse speed at the stern",
+                            "allOf": [
+                                {
+                                    "$ref": "../observation.json"
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

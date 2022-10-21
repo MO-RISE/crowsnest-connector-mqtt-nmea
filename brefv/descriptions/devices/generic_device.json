@@ -1,0 +1,45 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "title": "Generic device description",
+    "description": "A description of a generic device",
+    "required": [
+        "device_type",
+        "device_id",
+        "observations",
+        "commands"
+    ],
+    "properties": {
+        "device_type": {
+            "type": "string",
+            "title": "Device type",
+            "description": "The type of the device"
+        },
+        "device_id": {
+            "type": "string",
+            "title": "Device id",
+            "description": "The id of the device"
+        },
+        "metadata": {
+            "type": "object",
+            "title": "Metadata",
+            "description": "Metadata of this device"
+        },
+        "observations": {
+            "type": "object",
+            "title": "Observations",
+            "description": "Map of observations produced by this device",
+            "additionalProperties": {
+                "$ref": "../observation.json"
+            }
+        },
+        "commands": {
+            "type": "object",
+            "title": "Commands",
+            "description": "Map of commands accepted by this device",
+            "additionalProperties": {
+                "$ref": "../command.json"
+            }
+        }
+    }
+}

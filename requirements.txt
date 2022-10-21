@@ -1,0 +1,9 @@
+paho-mqtt
+streamz
+environs
+pydantic
+datamodel-code-generator
+numpy
+scipy
+pynmea2
+pytz

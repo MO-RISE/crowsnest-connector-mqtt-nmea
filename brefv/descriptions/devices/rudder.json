@@ -1,0 +1,162 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "title": "Rudder",
+    "description": "Description of a rudder device",
+    "allOf": [
+        {
+            "$ref": "./generic_device.json"
+        },
+        {
+            "properties": {
+                "device_type": {
+                    "default": "rudder",
+                    "pattern": "^rudder$"
+                },
+                "observations": {
+                    "type": "object",
+                    "title": "Observations",
+                    "description": "Map of observations produced by a rudder",
+                    "required": [
+                        "angle"
+                    ],
+                    "properties": {
+                        "angle": {
+                            "description": "The main rudder angle",
+                            "allOf": [
+                                {
+                                    "$ref": "../observation.json"
+                                },
+                                {
+                                    "required": [
+                                        "min_value",
+                                        "max_value"
+                                    ],
+                                    "properties": {
+                                        "min_value": {},
+                                        "max_value": {}
+                                    }
+                                }
+                            ]
+                        },
+                        "angle_set": {
+                            "description": "The set point for the main rudder angle",
+                            "allOf": [
+                                {
+                                    "$ref": "../observation.json"
+                                },
+                                {
+                                    "required": [
+                                        "min_value",
+                                        "max_value"
+                                    ],
+                                    "properties": {
+                                        "min_value": {},
+                                        "max_value": {}
+                                    }
+                                }
+                            ]
+                        },
+                        "flap_angle": {
+                            "description": "The flap rudder angle",
+                            "allOf": [
+                                {
+                                    "$ref": "../observation.json"
+                                },
+                                {
+                                    "required": [
+                                        "min_value",
+                                        "max_value"
+                                    ],
+                                    "properties": {
+                                        "min_value": {},
+                                        "max_value": {}
+                                    }
+                                }
+                            ]
+                        },
+                        "flap_angle_set": {
+                            "description": "The set point for the flap rudder angle",
+                            "allOf": [
+                                {
+                                    "$ref": "../observation.json"
+                                },
+                                {
+                                    "required": [
+                                        "min_value",
+                                        "max_value"
+                                    ],
+                                    "properties": {
+                                        "min_value": {},
+                                        "max_value": {}
+                                    }
+                                }
+                            ]
+                        },
+                        "wrench": {
+                            "description": "The force and moment produced by the rudder",
+                            "allOf": [
+                                {
+                                    "$ref": "../observation.json"
+                                },
+                                {
+                                    "required": [
+                                        "location",
+                                        "rotation"
+                                    ],
+                                    "properties": {
+                                        "location": {},
+                                        "rotation": {}
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "commands": {
+                    "type": "object",
+                    "title": "Commands",
+                    "description": "Map of commands accepted by a rudder",
+                    "properties": {
+                        "angle_set": {
+                            "description": "The set point for the main rudder angle",
+                            "allOf": [
+                                {
+                                    "$ref": "../command.json"
+                                },
+                                {
+                                    "required": [
+                                        "min_value",
+                                        "max_value"
+                                    ],
+                                    "properties": {
+                                        "min_value": {},
+                                        "max_value": {}
+                                    }
+                                }
+                            ]
+                        },
+                        "flap_angle_set": {
+                            "description": "The set point for the flap rudder angle",
+                            "allOf": [
+                                {
+                                    "$ref": "../command.json"
+                                },
+                                {
+                                    "required": [
+                                        "min_value",
+                                        "max_value"
+                                    ],
+                                    "properties": {
+                                        "min_value": {},
+                                        "max_value": {}
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

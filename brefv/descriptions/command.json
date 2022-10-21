@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "title": "Commands description",
+  "description": "A description of a command",
+  "required": [
+    "type"
+  ],
+  "properties": {
+    "type": {
+      "type": "string",
+      "format": "uri",
+      "title": "Command type",
+      "description": "An uri to a JSON schema defining the payload of the command"
+    },
+    "description": {
+      "type": "string",
+      "title": "Description",
+      "description": "Human readable description of the command"
+    },
+    "unit": {
+      "type": "string",
+      "title": "Unit",
+      "description": "Unit of the command"
+    },
+    "min_value": {
+      "type": "number",
+      "title": "Minimum value",
+      "description": "Minimum allowed value of the command"
+    },
+    "max_value": {
+      "type": "number",
+      "title": "Maximum value",
+      "description": "Maximum allowed value of the command"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "title": "Envelope",
+  "description": "An envelope containing a message and the timestamp when it was sent.",
+  "required": [
+    "sent_at",
+    "message"
+  ],
+  "properties": {
+    "sent_at": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Sent at",
+      "description": "Date and time when the message was sent from the application processing the sensor data, expressed according to the ISO 8601 standard.",
+      "examples": [
+        "2021-10-07T20:20:39.345+00:00"
+      ]
+    },
+    "message": {
+      "type": [
+        "number",
+        "string",
+        "boolean",
+        "object",
+        "array"
+      ],
+      "title": "Message",
+      "description": "The message contained by this envelope."
+    }
+  },
+  "additionalProperties": false
+}

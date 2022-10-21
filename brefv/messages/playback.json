@@ -1,0 +1,21 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "title": "Playback command",
+    "description": "Command given to an active playback session",
+    "required": [
+        "playback_speed"
+    ],
+    "properties": {
+        "playback_speed": {
+            "type": "number",
+            "title": "Playback speed",
+            "description": "Reverse is number under zero. Zero is paused. Above zero is moving forward and 1 is seen as normal speed"
+        },
+        "start_from": {
+            "type": "number",
+            "title": "Start from",
+            "description": "Start frame where position from where the playback will start or continue from"
+        }
+    }
+}

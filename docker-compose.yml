@@ -1,0 +1,10 @@
+version: '3'
+services:
+
+  multicast-nmea:
+    build: .
+    restart: unless-stopped
+    network_mode: "host"
+    # environment:
+    #   - MQTT_TOPIC_NMEA_IN=CROWSNEST/SEAHORSE/GNSS/0/RAW
+    #   - MQTT_TOPIC_JSON_OUT=CROWSNEST/SEAHORSE/GNSS/0/JSON

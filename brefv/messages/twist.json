@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "title": "Twist",
+  "description": "The twist of a body´s geometric center given as a combination of its linear velocity and angular velocity in the BF frame of reference.",
+  "required": [
+    "linear_velocity",
+    "angular_velocity"
+  ],
+  "properties": {
+    "linear_velocity": {
+      "$ref": "./linear_velocity.json"
+    },
+    "angular_velocity": {
+      "$ref": "./angular_velocity.json"
+    }
+  },
+  "additionalProperties": false
+}

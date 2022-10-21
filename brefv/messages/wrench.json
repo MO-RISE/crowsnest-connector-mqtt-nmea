@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "title": "Wrench",
+  "description": "A wrench given as a combination of Force and Moment, defined in the BF frame of reference.",
+  "required": [
+    "force",
+    "moment"
+  ],
+  "properties": {
+    "force": {
+      "$ref": "./force.json"
+    },
+    "moment": {
+      "$ref": "./moment.json"
+    }
+  },
+  "additionalProperties": false
+}
