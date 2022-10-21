@@ -5,6 +5,6 @@ services:
     build: .
     restart: unless-stopped
     network_mode: "host"
-    # environment:
-    #   - MQTT_TOPIC_NMEA_IN=CROWSNEST/SEAHORSE/GNSS/0/RAW
-    #   - MQTT_TOPIC_JSON_OUT=CROWSNEST/SEAHORSE/GNSS/0/JSON
+    environment:
+      - MQTT_TOPIC_NMEA_IN=CROWSNEST/SEAHORSE/NMEA0183/WIND
+      - MQTT_TOPIC_JSON_OUT=CROWSNEST/SEAHORSE/WIND/0/JSON
