@@ -25,8 +25,8 @@ MQTT_TRANSPORT: str = env("MQTT_TRANSPORT", "tcp")
 MQTT_TLS: bool = env.bool("MQTT_TLS", False)
 MQTT_USER: str = env("MQTT_USER", None)
 MQTT_PASSWORD: str = env("MQTT_PASSWORD", None)
-MQTT_TOPIC_NMEA_IN: str = env("MQTT_TOPIC_RAW", "CROWSNEST/SEAHORSE/NMEA0183/WIND")
-MQTT_TOPIC_JSON_OUT: str = env("MQTT_TOPIC_JSON", "CROWSNEST/SEAHORSE/WIND/0/JSON")
+MQTT_TOPIC_NMEA_IN: str = env("MQTT_TOPIC_NMEA_IN", "CROWSNEST/SEAHORSE/NMEA0183/WIND")
+MQTT_TOPIC_JSON_OUT: str = env("MQTT_TOPIC_JSON_OUT", "CROWSNEST/SEAHORSE/WIND/0/JSON")
 
 
 # Setup logger
@@ -242,4 +242,4 @@ if __name__ == "__main__":
 
     # Socket Multicast runs in the foreground so we put the MQTT stuff in a separate thread
     # threading.Thread(target=mq.loop_forever, daemon=True).start()
-    target=mq.loop_forever()
+    mq.loop_forever()
