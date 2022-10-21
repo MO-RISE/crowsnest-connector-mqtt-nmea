@@ -70,8 +70,11 @@ def to_mqtt(payload: Any, topic: str):
 
 
 def on_message(client, userdata, message):
+    LOGGER.info("New Message...")
+
     msg = message.payload.decode("utf-8")
     payload = json.loads(msg)
+    LOGGER.info(payload)
 
     if "message" in payload:
         nmea_str = payload["message"]
