@@ -1,12 +1,12 @@
 # Crowsnest-connector-mqtt-nmea
 
-A crowsnest microservice for connecting to NMEA UDP stream GNSS data.
+A crowsnest microservice for connecting to NMEA MQTT stream and parsing NMEA to JSON.
 
 ## How it works
 
 For now, this microservice just does the basics.
 
-- Connects to UPD/Multicast stream
+- Connects to MQTT broker 
 - Transform 0183 NMEA sentences to JSON
 - Wraps into a brefv message over MQTT the RAW NMEA and JSON parsed data
 
@@ -16,14 +16,10 @@ For now, this microservice just does the basics.
 version: "3"
 services:
   multicast-nmea:
-    image: ghcr.io/mo-rise/crowsnest-connector-udp-nmea:latest
+    image: ghcr.io/mo-rise/crowsnest-connector-mqtt-nmea:latest
     restart: unless-stopped
     network_mode: "host"
-    environment:
-      - MCAST_GRP=239.192.0.3
-      - MCAST_PORT=60003
-      - MQTT_TOPIC_RAW=CROWSNEST/SEAHORSE/GNSS/0/RAW
-      - MQTT_TOPIC_JSON=CROWSNEST/SEAHORSE/GNSS/0/JSON
+
 ```
 
 ## Development setup

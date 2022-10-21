@@ -30,11 +30,11 @@ MQTT_TOPIC_JSON_OUT: str = env("MQTT_TOPIC_JSON_OUT", "CROWSNEST/SEAHORSE/WIND/0
 
 
 # Setup logger
-LOG_LEVEL = env.log_level("LOG_LEVEL", logging.INFO)
+LOG_LEVEL = env.log_level("LOG_LEVEL", logging.WARNING)
 logging.basicConfig(level=LOG_LEVEL)
 logging.captureWarnings(True)
 warnings.filterwarnings("once")
-LOGGER = logging.getLogger("crowsnest-connector-upd-nmea")
+LOGGER = logging.getLogger("crowsnest-connector-mqtt-nmea")
 
 
 # Create mqtt client and configure it according to configuration
@@ -84,15 +84,11 @@ def on_message(client, userdata, message):
 
 def listen_mqtt_nmea_0183():
     """Init MQTT topic input"""
-    LOGGER.info("HERE")
 
     mq = MQTT(client_id=MQTT_CLIENT_ID, transport=MQTT_TRANSPORT)
     mq.connect(MQTT_BROKER_HOST, MQTT_BROKER_PORT)
     mq.subscribe(MQTT_TOPIC_NMEA_IN)
-    LOGGER.info("HERE 2" )
-   
     mq.on_message = on_message
-
     mq.loop_forever()
 
 
