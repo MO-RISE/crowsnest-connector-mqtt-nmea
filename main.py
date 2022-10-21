@@ -235,4 +235,5 @@ if __name__ == "__main__":
     listen_mqtt_nmea_0183(source)
 
     # Socket Multicast runs in the foreground so we put the MQTT stuff in a separate thread
-    threading.Thread(target=mq.loop_forever, daemon=True).start()
+    # threading.Thread(target=mq.loop_forever, daemon=True).start()
+    target=mq.loop_forever()
