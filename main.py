@@ -240,7 +240,7 @@ if __name__ == "__main__":
 
     # MAIN listener
     LOGGER.info("Setting up MQTT listener...")
-    listen_mqtt_nmea_0183(source)
+    listen_mqtt_nmea_0183()
 
     # Socket Multicast runs in the foreground so we put the MQTT stuff in a separate thread
     # threading.Thread(target=mq.loop_forever, daemon=True).start()
