@@ -1,7 +1,7 @@
 version: '3'
 services:
 
-  multicast-nmea:
+  mqtt-nmea:
     build: .
     restart: unless-stopped
     network_mode: "host"
