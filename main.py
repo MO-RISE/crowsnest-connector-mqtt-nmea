@@ -82,7 +82,7 @@ def on_message(client, userdata, message):
         source.emit(nmea_str)
 
 
-def listen_mqtt_nmea_0183(source):
+def listen_mqtt_nmea_0183():
     """Init MQTT topic input"""
     LOGGER.info("HERE")
 
@@ -92,6 +92,8 @@ def listen_mqtt_nmea_0183(source):
     LOGGER.info("HERE 2" )
    
     mq.on_message = on_message
+
+    mq.loop_forever()
 
 
 def pars_nmea(nmea_msg):
@@ -242,4 +244,4 @@ if __name__ == "__main__":
 
     # Socket Multicast runs in the foreground so we put the MQTT stuff in a separate thread
     # threading.Thread(target=mq.loop_forever, daemon=True).start()
-    mq.loop_forever()
+    
