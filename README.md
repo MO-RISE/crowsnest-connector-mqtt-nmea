@@ -10,7 +10,7 @@ For now, this microservice just does the basics.
 - Transform 0183 NMEA sentences to JSON
 - Wraps into a brefv message over MQTT the RAW NMEA and JSON parsed data
 
-### Typical setup: docker-compose.nmea-anavs.yml
+### Typical setup: docker-compose.mqtt-nmea.yml
 
 ```yaml
 version: "3"
