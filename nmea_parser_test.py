@@ -79,10 +79,17 @@ try:
             nmea_parameters.update(GST)
 
         elif msg.sentence_type == "MWV":
+
+            # for idx, item in enumerate(PASHR_items):
+            #     try:
+            #     PASHR_items[idx] = float(PASHR_items[idx])
+            # except:
+            #     pass
+
             MWV = {
-                "wind_angle": float(msg.wind_angle),
+                "wind_angle": msg.wind_angle,
                 "reference": msg.reference,
-                "wind_speed": float(msg.wind_speed),
+                "wind_speed": msg.wind_speed,
                 "wind_speed_units": msg.wind_speed_units,
                 "status": msg.status
             }

@@ -194,9 +194,9 @@ def pars_nmea(nmea_str):
 
                 elif msg.sentence_type == "MWV":
                     MWV = {
-                        "wind_angle": float(msg.wind_angle),
+                        "wind_angle": msg.wind_angle,
                         "reference": msg.reference,
-                        "wind_speed": float(msg.wind_speed),
+                        "wind_speed": msg.wind_speed,
                         "wind_speed_units": msg.wind_speed_units,
                         "status": msg.status,
                     }
