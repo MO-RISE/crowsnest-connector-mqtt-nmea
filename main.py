@@ -212,14 +212,18 @@ def pars_nmea(nmea_str):
 def to_brefv_nmea(GNSS_parameters):
     """NMEA in message to brefv envelope"""
 
-    # TODO: Modify to brefv format
+     # Checking if empty    
+    if bool(GNSS_parameters) == False:
+        LOGGER.debug("Empty message")
+    else:
+        # TODO: Modify to brefv format
 
-    envelope = Envelope(
-        sent_at=datetime.now(timezone.utc).isoformat(),
-        message=GNSS_parameters,
-    )
-    LOGGER.debug("Assembled into brefv envelope: %s", envelope)
-    return envelope.json()
+        envelope = Envelope(
+            sent_at=datetime.now(timezone.utc).isoformat(),
+            message=GNSS_parameters,
+        )
+        LOGGER.debug("Assembled into brefv envelope: %s", envelope)
+        return envelope.json()
 
 
 if __name__ == "__main__":
